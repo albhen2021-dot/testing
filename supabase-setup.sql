@@ -19,5 +19,7 @@ create policy "Allow public read" on entries
 create policy "Allow public insert" on entries
   for insert with check (true);
 
-create policy "Allow public delete" on entries
-  for delete using (true);
+alter table login enable row level security;
+
+create policy "Allow public read" on login
+  for select using (true);
