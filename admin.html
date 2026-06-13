@@ -1,0 +1,21 @@
+<h1>Welcome Admin!</h1>
+
+<p>You have successfully logged in.</p>
+
+<button onclick="logout()">Logout</button>
+
+<script>
+
+// Prevent direct access
+if(localStorage.getItem("isLoggedIn") !== "true"){
+    window.location.href = "index.html";
+}
+
+function logout(){
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
